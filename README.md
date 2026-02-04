@@ -2,9 +2,15 @@
 
 ## Project Overview
 
-This project focuses on predicting employee attrition using machine learning techniques. The goal is to analyze HR data and build a predictive model that identifies employees who are likely to leave the company.
+This project focuses on predicting employee attrition using machine learning techniques. The goal is to analyze HR data and build a predictive model capable of identifying employees who are at risk of leaving the company.
 
-The analysis follows a complete data science workflow including data preprocessing, feature engineering, model training, and evaluation.
+The analysis follows a complete data science workflow including:
+
+- Data preprocessing  
+- Exploratory data analysis  
+- Feature engineering  
+- Model training  
+- Model evaluation  
 
 ---
 
@@ -12,120 +18,134 @@ The analysis follows a complete data science workflow including data preprocessi
 
 The dataset used in this project is the **IBM HR Analytics Employee Attrition Dataset**, which contains demographic, job-related, and performance-related information about employees.
 
-Target variable:
+### Target Variable
 
-- **Attrition**: Indicates whether an employee left the company (Yes = 1, No = 0)
+- **Attrition**: Indicates whether an employee left the company  
+  - Yes = 1  
+  - No = 0  
 
 ---
 
 ## Technologies Used
 
+The project was developed using the following technologies:
+
 - Python  
 - Pandas  
 - NumPy  
-- Scikit-Learn  
-- Matplotlib / Seaborn  
+- Scikit-learn  
+- Matplotlib  
+- Seaborn  
 - Jupyter Notebook  
-- Git & GitHub  
+- Git and GitHub  
 
 ---
 
-## Project Structure
+## Repository Structure
 
+```
 people-analytics-employee-churn/
 │
 ├── data/
-│ └── WA_Fn-UseC_-HR-Employee-Attrition.csv
+│   └── WA_Fn-UseC_-HR-Employee-Attrition.csv
 │
 ├── notebooks/
-│ └── churn_analysis.ipynb
+│   └── churn_analysis.ipynb
+│
+├── outputs/
 │
 ├── src/
 │
 └── README.md
-
-
----
-
-## Methodology
-
-The project followed these main steps:
-
-1. **Data Cleaning and Preprocessing**
-   - Removal of non-informative columns
-   - Encoding of categorical variables
-   - Standardization of numerical features
-
-2. **Exploratory Data Analysis**
-   - Distribution of the target variable
-   - Identification of key patterns related to attrition
-
-3. **Model Training**
-   - Train/Test split with stratification
-   - Logistic Regression model
-   - Feature scaling with StandardScaler
-
-4. **Model Evaluation**
-   - AUC-ROC score
-   - Precision, Recall, F1-score
-   - Confusion Matrix
-
----
-
-## Model Results
-
-The final model achieved the following performance:
-
-- **AUC-ROC:** 0.80  
-- **Accuracy:** 0.87  
-
-Key observations:
-
-- The dataset is imbalanced (more employees stayed than left)
-- The model performs well identifying non-attrition cases
-- Recall for attrition class can be improved in future iterations
-
----
-
-## Feature Importance
-
-The most influential factors associated with attrition included:
-
-- Overtime  
-- Years since last promotion  
-- Department  
-- Years with current manager  
-- Job satisfaction  
-
-These insights can be useful for HR decision-making and retention strategies.
+```
 
 ---
 
 ## How to Run the Project
 
-1. Clone the repository:
+### 1. Clone the repository
+
+Open a terminal and run:
 
 ```bash
 git clone https://github.com/denpareja/people-analytics-employee-churn.git
-Install dependencies:
+cd people-analytics-employee-churn
+```
 
+### 2. Install required dependencies
+
+```bash
 pip install -r requirements.txt
-Open the notebook:
+```
 
+If you do not have a requirements file, you can manually install the main libraries:
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn
+```
+
+### 3. Open the notebook
+
+```bash
 jupyter notebook notebooks/churn_analysis.ipynb
-Future Improvements
-Possible enhancements for future versions:
+```
 
-Try additional models such as Random Forest or XGBoost
+---
 
-Apply techniques to handle class imbalance
+## Modeling Approach
 
-Hyperparameter tuning
+The project follows these main steps:
 
-Build an interactive dashboard
+1. **Data Preprocessing**
+   - Handling categorical variables  
+   - Dropping non-informative features  
+   - Standardizing numerical variables  
 
-Author
-Denisse Pareja
+2. **Model Training**
+   - Logistic Regression was used as the primary model  
+   - Train-test split with stratification  
+   - StandardScaler applied to features  
 
-Data Science Student – TripleTen
-Miami, FL
+3. **Evaluation Metrics**
+   - ROC-AUC  
+   - Classification report  
+   - Confusion matrix  
+
+---
+
+## Key Results
+
+The Logistic Regression model achieved:
+
+- **ROC-AUC Score:** approximately 0.80  
+- Good performance identifying non-attrition cases  
+- Moderate recall for employees who actually left  
+
+These results indicate that the model can be useful as a first step in identifying potential churn risks within an organization.
+
+---
+
+## Future Improvements
+
+Possible enhancements for future iterations:
+
+- Testing additional models (Random Forest, XGBoost)  
+- Hyperparameter tuning  
+- Handling class imbalance with techniques like SMOTE  
+- Building an interactive dashboard for HR teams  
+
+---
+
+## Author
+
+**Denisse Pareja**
+
+Data Science Student – TripleTen  
+Miami, Florida  
+
+---
+
+## License
+
+This project is for educational purposes.
+
