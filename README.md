@@ -140,7 +140,7 @@ Possible enhancements for future iterations:
 
 **Denisse Pareja**
 
-Data Science Student – TripleTen  
+Data Scientist – TripleTen  
 Miami, Florida  
 
 ---
